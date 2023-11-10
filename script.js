@@ -21,7 +21,7 @@ async function anySite(url){
   embedThis = document.createElement("iframe")
   embedThis.style = "width:100vw;height:100vh"
   embedThis.frameborder = 0
-  embedthis.src = url
+  embedThis.src = url
   pipWindow.document.body.append(embedThis);
 }
 
