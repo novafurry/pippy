@@ -1,6 +1,3 @@
-let preview = document.getElementById("screen");
-let startButton = document.getElementById("screenPippy");
-let pipbtn = document.getElementById("pip");
 let recordingTimeMS = 10000;
 function log(msg) {
   alert(msg)
@@ -14,25 +11,6 @@ function startWebCam(){
   .then(stream => preview.srcObject = stream).catch(error => log(error));
  }
 }
-startButton.addEventListener("click", function() {
-  navigator.mediaDevices.getDisplayMedia({
-    video: true,
-    audio: false
-  }).then(stream => {
-    preview.srcObject = stream;
-    preview.requestPictureInPicture();
-    preview.captureStream = preview.captureStream || preview.mozCaptureStream;
-    return new Promise(resolve => preview.onplaying = resolve);
-  })
-  .catch(log);
-}, false);
-
-preview.addEventListener("loadedmetadata", function(){
-  wait(1000)
-  preview.requestPictureInPicture()
-
-})
-pipbtn.addEventListener("click", function() {preview.requestPictureInPicture()})
 async function anySite(url){
   document.getElementById("urlforPop").textContent = url
   let options = {
@@ -55,3 +33,27 @@ if (!("documentPictureInPicture" in window)) {
   alert("Document Picture-In-Picture is not supported by your browser. Pippy Dock, and interactive webpage will not work.")
   document.getElementById("requiresDocumentPiP").hidden = true
 }
+document.addEventListener("load", function (){
+  let preview = document.getElementById("screen");
+  let startButton = document.getElementById("screenPippy");
+  let pipbtn = document.getElementById("pip");
+  startButton.addEventListener("click", function() {
+    navigator.mediaDevices.getDisplayMedia({
+      video: true,
+      audio: false
+    }).then(stream => {
+      preview.srcObject = stream;
+      preview.requestPictureInPicture();
+      preview.captureStream = preview.captureStream || preview.mozCaptureStream;
+      return new Promise(resolve => preview.onplaying = resolve);
+    })
+    .catch(log);
+  }, false);
+
+  preview.addEventListener("loadedmetadata", function(){
+    wait(1000)
+    preview.requestPictureInPicture()
+
+  })
+  pipbtn.addEventListener("click", function() {preview.requestPictureInPicture()})
+})
