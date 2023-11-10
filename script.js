@@ -50,10 +50,8 @@ async function anySite(url){
     height: 400,
   };
   let pipWindow = await documentPictureInPicture.requestWindow(options);
-  embedThis = document.createElement("iframe")
-  embedThis.style = "width:100vw;height:100vh;position:absolute;top:0px;left:0px;border:0px solid white;"
-  embedThis.frameborder = 0
-  embedThis.src = window.location.protocol+"//sword.msg.boats/service/"+customEncode(url)
+  embedThis = document.createElement("div")
+  embedThis.innerHTML = "<iframe frameborder=0 style='width:100vw;height:100vh;position:absolute;top:0px;left:0px;border:0px solid white;' onerror='anErrorOccured()'></iframe><p hidden id='url'>"+url+"</p><script src='https://foxsdenyt.github.io/pippy/embedscript.js'></script>"
   pipWindow.document.body.append(embedThis);
 }
 
