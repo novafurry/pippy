@@ -61,10 +61,11 @@
           </button>
         </td>
         <td>
-          <button id="intsite" class="button" style="height:67px;" >
+          <button id="intsite" class="button" style="height:67px;">
             A website<br>
             <small style="font-size:x-small;line-height:0.5 !important">Interactive</small>
-          </button></td>
+          </button>
+        </td>
       </tr>
     </tbody>
   </table>
@@ -76,6 +77,11 @@
 <div class="bottom">
   <pre id="log"></pre>
 </div>
+<dialog>
+    <input type="url" id="url">
+    <button id="lpip">Launch PiP</button>
+    <button onclick='document.querySelector("dialog").close()'>Close</button>
+</dialog>
 <!-- partial -->
   <script  src="./script.js"></script>
 
