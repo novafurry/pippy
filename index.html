@@ -2,7 +2,29 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>Pippy Beta</title>
+  <!-- HTML Meta Tags -->
+<title>Pippy Beta</title>
+<meta name="description" content="Put anything in a PiP on your ChromeOS machine (or anything with a modern browser!)">
+
+<!-- Google / Search Engine Tags -->
+<meta itemprop="name" content="Pippy Beta">
+<meta itemprop="description" content="Put anything in a PiP on your ChromeOS machine (or anything with a modern browser!)">
+<meta itemprop="image" content="https://foxsdenyt.github.io/pippy/images/ss.png">
+
+<!-- Facebook Meta Tags -->
+<meta property="og:url" content="https://foxsdenyt.github.io/pippy">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Pippy Beta">
+<meta property="og:description" content="Put anything in a PiP on your ChromeOS machine (or anything with a modern browser!)">
+<meta property="og:image" content="https://foxsdenyt.github.io/pippy/images/ss.png">
+
+<!-- Twitter Meta Tags -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Pippy Beta">
+<meta name="twitter:description" content="Put anything in a PiP on your ChromeOS machine (or anything with a modern browser!)">
+<meta name="twitter:image" content="https://foxsdenyt.github.io/pippy/images/ss.png">
+
+<!-- Meta Tags Generated via http://heymeta.com -->
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <link rel="manifest" href="manifest.json">
   <link rel="favicon" type="image/x-icon" href="favicon.ico">
@@ -26,12 +48,12 @@
           </button>
         </td>
         <td style="width:50%">
-          <button id="screenPippy" class="button" style="height:67px;" disabled=true>
+          <button id="cameraPippy" class="button" style="height:67px;" onclick="startWebCam()">
             Your camera<br>
           </button>
         </td>
       </tr>
-      <tr style="width:100%">
+      <tr id="requiresDocumentPiP" style="width:100%">
         <td>
           <button id="startButton" class="button" style="height:67px;"  disabled>
             The Pippy Dock<br>
@@ -48,7 +70,8 @@
   </table>
   <em>PiP didn't show?</em><br>
   <div class=""><button id="pip" class="button"><small>Show PiP</small></button></div>
-  <video id="preview" width="300" height="200" autoplay muted hidden></video>
+  <video id="screen" width="0" height="0" autoplay muted></video>
+  <div id="forPip"><p id="urlforPop" hidden></p></div>
 </div>
 <div class="bottom">
   <pre id="log"></pre>
