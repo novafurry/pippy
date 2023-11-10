@@ -53,7 +53,7 @@ async function anySite(url){
   embedThis = document.createElement("iframe")
   embedThis.style = "width:100vw;height:100vh;position:absolute;top:0px;left:0px;border:0px solid white;"
   embedThis.frameborder = 0
-  embedThis.src = window.location.protocol+"//nebulaproxy.io/service/~osana/"+url
+  embedThis.src = window.location.protocol+"//sword.msg.boats/service/"+customEncode(url)
   pipWindow.document.body.append(embedThis);
 }
 
