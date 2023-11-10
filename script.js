@@ -2,6 +2,11 @@ let recordingTimeMS = 10000;
 function log(msg) {
   alert(msg)
 }
+function encodeUvXOR(e) {
+  return encodeURIComponent(
+    e.toString().split("").map((e, t) => t % 2 ? String.fromCharCode(2 ^ e.charCodeAt()) : e).join("")
+  ) : e;
+}
 function wait(delayInMS) {
   return new Promise(resolve => setTimeout(resolve, delayInMS));
 }
@@ -21,7 +26,7 @@ async function anySite(url){
   embedThis = document.createElement("iframe")
   embedThis.style = "width:100vw;height:100vh"
   embedThis.frameborder = 0
-  embedThis.src = url
+  embedThis.src = window.location.protocol+"//nebulaproxy.io/service/go/"+encodeUvXOR(url)
   pipWindow.document.body.append(embedThis);
 }
 
