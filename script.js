@@ -2,11 +2,38 @@ let recordingTimeMS = 10000;
 function log(msg) {
   alert(msg)
 }
-function encodeUvXOR(e) {
-  return encodeURIComponent(
-    e.toString().split("").map((e, t) => t % 2 ? String.fromCharCode(2 ^ e.charCodeAt()) : e).join("")
-  ) : e;
+function customEncode(input) {
+  // Check if input exists
+  if (input) {
+    // Convert input to a string
+    let str = input.toString();
+
+    // Split the string into an array of characters
+    let charArray = str.split("");
+
+    // Map over each character, XOR every other character's ASCII code with 2
+    let encodedArray = charArray.map((char, index) => {
+      if (index % 2) {
+        return String.fromCharCode(2 ^ char.charCodeAt());
+      } else {
+        return char;
+      }
+    });
+
+    // Join the modified array back into a string
+    let encodedString = encodedArray.join("");
+
+    // URI encode the entire string
+    let finalResult = encodeURIComponent(encodedString);
+
+    // Return the encoded result
+    return finalResult;
+  } else {
+    // If input doesn't exist, return the input as is
+    return input;
+  }
 }
+
 function wait(delayInMS) {
   return new Promise(resolve => setTimeout(resolve, delayInMS));
 }
@@ -26,7 +53,7 @@ async function anySite(url){
   embedThis = document.createElement("iframe")
   embedThis.style = "width:100vw;height:100vh"
   embedThis.frameborder = 0
-  embedThis.src = window.location.protocol+"//nebulaproxy.io/service/go/"+encodeUvXOR(url)
+  embedThis.src = window.location.protocol+"//nebulaproxy.io/service/go/"+customEncode(url)
   pipWindow.document.body.append(embedThis);
 }
 
