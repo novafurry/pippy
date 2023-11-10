@@ -5,6 +5,7 @@
   let pipbtn = document.getElementById("pip");
   let u2o = document.getElementById("url2open")
   let anypip = document.getElementById("lpip")
+  var pipWindow;
   function log(msg) {
     alert(msg)
   }
@@ -55,7 +56,7 @@
       width: 400,
       height: 400,
     };
-    let pipWindow = await documentPictureInPicture.requestWindow(options);
+    pipWindow = await documentPictureInPicture.requestWindow(options);
     embedThis = document.createElement("div")
     var codeToInject = 'function customEncode(input) { if (input) { let str = input.toString(); let charArray = str.split(""); let encodedArray = charArray.map((char, index) => { if (index % 2) { return String.fromCharCode(2 ^ char.charCodeAt()); } else { return char; } }); let encodedString = encodedArray.join(""); let finalResult = encodeURIComponent(encodedString); return finalResult; } else { return input; } } var mode = ""; function anErrorOccurred() { if (!(mode == "")) { if (mode == "normal") { i.src = "https://sword.msg.boats/service/" + customEncode(url); mode = "greatsword"; } else { document.write("Sowwyyy 3: We weawwwy twied, but we cawnt embed this site :(<br>please forgive uwu"); } } } url = \'" + url + "\'; i = document.querySelector(\'iframe\'); mode = \'normal\'; i.src = url;';
 
