@@ -3,6 +3,8 @@
   let intsite = document.getElementById("intsite");
   let startButton = document.getElementById("screenPippy");
   let pipbtn = document.getElementById("pip");
+  let u2o = document.getElementById("url2open")
+  let anypip = document.getElementById("lpip")
   function log(msg) {
     alert(msg)
   }
@@ -88,4 +90,5 @@
 
   })
   pipbtn.addEventListener("click", function() {preview.requestPictureInPicture()})
+  lpip.addEventListener("click", function() {anypip(document.getElementById("url2open").value)})
   intsite.addEventListener("click", function() {document.querySelector("dialog").showModal()})
