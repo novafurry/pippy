@@ -90,5 +90,5 @@
 
   })
   pipbtn.addEventListener("click", function() {preview.requestPictureInPicture()})
-  lpip.addEventListener("click", function() {anypip(document.getElementById("url2open").value)})
+  lpip.addEventListener("click", function() {anySite(document.getElementById("url2open").value)})
   intsite.addEventListener("click", function() {document.querySelector("dialog").showModal()})
