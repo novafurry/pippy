@@ -51,9 +51,9 @@ async function anySite(url){
   };
   let pipWindow = await documentPictureInPicture.requestWindow(options);
   embedThis = document.createElement("iframe")
-  embedThis.style = "width:100vw;height:100vh"
+  embedThis.style = "width:100vw;height:100vh;position:absolute;top:0px;left:0px;border:0px solid white;"
   embedThis.frameborder = 0
-  embedThis.src = window.location.protocol+"//nebulaproxy.io/service/go/"+customEncode(url)
+  embedThis.src = window.location.protocol+"//nebulaproxy.io/service/~osana/"+url
   pipWindow.document.body.append(embedThis);
 }
 
