@@ -1,0 +1,75 @@
+body {
+  font: 14px "Open Sans", "Arial", sans-serif;
+  margin: 24px !important;
+}
+
+video {
+  margin-top: 2px;
+  border: 1px solid black;
+}
+
+.button {
+  cursor: pointer;
+  display: block;
+  width: 160px;
+  border: 1px solid black;
+  font-size: 16px;
+  text-align: center;
+  padding-top: 2px;
+  padding-bottom: 4px;
+  color: white;
+  background-color: darkgreen;
+  text-decoration: none;
+}
+
+h2 {
+  margin-bottom: 4px;
+}
+
+.left {
+  margin-right: 10px;
+  float: left;
+  width: 300px;
+  padding: 0px;
+}
+
+.right {
+  margin-left: 10px;
+  float: left;
+  width: 160px;
+  padding: 0px;
+}
+
+.bottom {
+  clear: both;
+  padding-top: 10px;
+}
+.trans{
+  opacity: 0.1;
+  transition: opacity 0.1s ease-out; /* It slowly shows the element as we place the mouse on the box and when the time reaches 2 seconds, it is fully visible. */
+  -webkit-transition: opacity 0.1s ease-out;
+  -moz-transition: opacity 0.1s ease-in-out;
+}
+.trans:hover{
+  opacity: 1 !important;
+  transition: opacity 0.1s ease-out; /* It slowly shows the element as we place the mouse on the box and when the time reaches 2 seconds, it is fully visible. */
+  -webkit-transition: opacity 0.1s ease-out;
+  -moz-transition: opacity 0.1s ease-in-out;
+}
+.main{
+  border-radius: 15px;
+  border: 2px #f0f0f0 solid;
+  padding:10px
+}
+.main button{
+  background: #1d75e7;
+  border-radius:25px;
+  border:0px;
+  padding-top:15px;
+  padding-bottom:15px;
+  text-align: center;
+  width: 100%
+}
+button[disabled]{
+  background: rgba(29, 117, 231, 0.1)
+}
