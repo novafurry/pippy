@@ -46,6 +46,10 @@
           <button id="screenPippy" class="button" style="height:67px;">
             A window, tab or monitor<br>
           </button>
+          <dialog>
+            <small>if you chose a monitor option, you might need to press this button! <small onclick="startscreenfr.parentElement.close()">[x]</small></small>
+            <button id="startscreenfr">Start!</button>
+          </dialog>
         </td>
         <td style="width:50%">
           <button id="cameraPippy" class="button" style="height:67px;" onclick="startWebCam()">
@@ -73,15 +77,17 @@
   <div class=""><button id="pip" class="button"><small>Show PiP</small></button></div>
   <video id="screen" width="0" height="0" autoplay muted></video>
   <div id="forPip"><p id="urlforPop" hidden></p></div>
+  <dialog id="anypip">
+    <h4 style="line-height:0.5">Enter a URL</h4>
+    <p>Please include http/https</p>
+      <input type="url" id="url2open" value="https://" placeholder="Please include http or https!"><br><br>
+      <button id="lpip">Launch PiP</button><br><br>
+      <button onclick='document.querySelector("dialog#anypip").close()'>Close</button>
+  </dialog>
 </div>
 <div class="bottom">
   <pre id="log"></pre>
 </div>
-<dialog>
-    <input type="url" id="url2open" value="https://" placeholder="Please include http or https!">
-    <button id="lpip">Launch PiP</button>
-    <button onclick='document.querySelector("dialog").close()'>Close</button>
-</dialog>
 <!-- partial -->
   <script  src="./script.js"></script>
 

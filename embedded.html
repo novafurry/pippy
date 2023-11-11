@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <title>Pippy Poppity</title>
@@ -7,57 +8,56 @@
   <meta name="description" content="" />
   <link rel="icon" href="favicon.png">
 </head>
+
 <body>
   <button onclick='anErrorOccured()' style="position:absolute;z-index:9999999;top:0px;left:0px;border:0px solid white;">Not working? Click me.</button>
   <iframe allowfullscreen frameborder=0 style='width:100vw;height:100vh;position:absolute;top:0px;left:0px;border:0px solid white;'></iframe>
   <script>
-  function customEncode(input) {
-    // Check if input exists
-    if (input) {
-      // Convert input to a string
-      let str = input.toString();
+    function customEncode(input) {
+      // Check if input exists
+      if (input) {
+        // Convert input to a string
+        let str = input.toString();
 
-      // Split the string into an array of characters
-      let charArray = str.split("");
+        // Split the string into an array of characters
+        let charArray = str.split("");
 
-      // Map over each character, XOR every other character's ASCII code with 2
-      let encodedArray = charArray.map((char, index) => {
-        if (index % 2) {
-          return String.fromCharCode(2 ^ char.charCodeAt());
-        } else {
-          return char;
-        }
-      });
+        // Map over each character, XOR every other character's ASCII code with 2
+        let encodedArray = charArray.map((char, index) => {
+          if (index % 2) {
+            return String.fromCharCode(2 ^ char.charCodeAt());
+          } else {
+            return char;
+          }
+        });
 
-      // Join the modified array back into a string
-      let encodedString = encodedArray.join("");
+        // Join the modified array back into a string
+        let encodedString = encodedArray.join("");
 
-      // URI encode the entire string
-      let finalResult = encodeURIComponent(encodedString);
+        // URI encode the entire string
+        let finalResult = encodeURIComponent(encodedString);
 
-      // Return the encoded result
-      return finalResult;
-    } else {
-      // If input doesn't exist, return the input as is
-      return input;
-    }
-  }
-  var mode = '';
-  function anErrorOccured(){
-    if(!(mode == '')){
-      if( mode == 'normal'){
-        i.src = "https://sword.msg.boats/service/"+customEncode(url)
-        mode = 'greatsword'
-      } else{
-        document.write("Sowwyyy 3: We weawwwy twied, but we cawnt embed this site :(<br>please forgive uwu")
+        // Return the encoded result
+        return finalResult;
+      } else {
+        // If input doesn't exist, return the input as is
+        return input;
       }
     }
-  };
-  url = decodeURIComponent(window.location.search.substring(1))
-  i = document.querySelector('iframe');
-  mode = 'normal';
-  i.src = url;
-
+    var mode = ''; // initalizes
+    function anErrorOccured() { // handles the not working btn
+      if (mode == 'normal') { // if the mode was normal, try UltraViolet
+        i.src = "https://sword.msg.boats/service/" + customEncode(url) // reload in uv
+        mode = 'greatsword' // change mode
+      } else { //  display error when no more options
+        document.write("Sowwyyy 3: We weawwwy twied, but we cawnt embed this site :(<br>please forgive uwu")
+      }
+    };
+    url = decodeURIComponent(window.location.search.substring(1)) // extracts the url from the iframes SRCURL
+    i = document.querySelector('iframe'); // defines the iframe to a url
+    mode = 'normal'; // defines normal mode
+    i.src = url; // initially loads the url the normal way
   </script>
 </body>
+
 </html>

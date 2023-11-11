@@ -73,3 +73,13 @@ h2 {
 button[disabled]{
   background: rgba(29, 117, 231, 0.1)
 }
+dialog{
+  border-radius: 15px;
+  border: 0px #f0f0f0 solid;
+  padding: 10px;
+  box-shadow: 0px 0px 33px -1px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 0px 0px 33px -1px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 33px -1px rgba(0,0,0,0.75);
+  padding: 10px !important;
+
+}
