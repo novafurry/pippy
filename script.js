@@ -1,4 +1,4 @@
-  let preview = document.getElementById("screen"); .// defines a variable for the picture-in-picture's base
+  let preview = document.getElementById("screen"); // defines a variable for the picture-in-picture's base
   let intsite = document.getElementById("intsite"); // defines a variable for the interactive website button
   let startButton = document.getElementById("screenPippy"); // defines a variable for the screen/window/tab button
   let pipbtn = document.getElementById("pip"); // defines a variable for the show picture-in-picture button
