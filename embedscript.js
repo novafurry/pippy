@@ -33,7 +33,7 @@ var mode = '';
 func anErrorOccured(){
   if(!(mode == '')){
     if( mode == 'normal'){
-      i.src = "https://sword.msg.boats/service/"+customEncode(url)
+      i.src = "https://nebulaproxy.io/service/go/"+customEncode(url)
       mode = 'greatsword'
     } else{
       document.write("Sowwyyy 3: We weawwwy twied, but we cawnt embed this site :(<br>please forgive uwu")
