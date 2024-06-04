@@ -62,7 +62,7 @@
     };
     pipWindow = await documentPictureInPicture.requestWindow(options); // requests a documentPictureInPicture (interactive PiP), with the options defined above
     embedThis = document.createElement("div"); // creates an element, which will be sent to the PiP
-    embedThis.innerHTML = "<iframe frameborder=0 style='width:100vw;height:100vh;position:absolute;top:0px;left:0px;border:0px solid white;' allowfullscreen src='https://foxsdenyt.github.io/pippy/embedded.html?" + url + "'></iframe>" // adds an iframe that loads the embedder page to the afforementioned element.
+    embedThis.innerHTML = "<iframe frameborder=0 style='width:100vw;height:100vh;position:absolute;top:0px;left:0px;border:0px solid white;' allowfullscreen src='https://novafurry.github.io/pippy/embedded.html?" + url + "'></iframe>" // adds an iframe that loads the embedder page to the afforementioned element.
     pipWindow.document.body.append(embedThis); // adds the element to the PiP
   }
   if(!("mediaDevices" in navigator)){ // checks if browser supports grabbing mediaDevices
